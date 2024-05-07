@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Tienda</title>
-		<link rel="stylesheet" href="/Eventos_clase1/store.css" />
-	</head>
-	<body>
-		<header>
-			<h1>Store.hanako</h1>
-			<!-- contenedor de el carrito -->
-			<section class="container-icon">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-					class="icon-cart"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-					/>
-				</svg>
-				<article class="count-products">
-					<span id="contador-productos">0</span>
-				</article>
-                <!-- contenedor de imagin con el producto -->
-				<section class="container-cart-products hidden-cart">
-					<article class="cart-product">
-						<article class="info-cart-product">
-                            <span class="cantidad-producto-carrito">1</span>
-                            <p class="titulo-producto-carrito">lampara de mariposas</p>
-                            <span class="precio-producto-carrito">$50.000</span>
-                        </article>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="icon-close"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M6 18L18 6M6 6l12 12"
-							/>
-						</svg>
-					</article>
-                    <article class="cart-total">
-                        <h3>Total:</h3>
-                        <span class="total-pagar">$200</span>
-                    </article>
-				</section>
-			</section>
-		</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda</title>
+    <link rel="stylesheet" href="/Eventos_clase1/store.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Store.hanako</h1>
+      <!-- contenedor de el carrito -->
+      <section class="container-icon">
+        <article class="container-cart-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="icon-cart"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+            />
+          </svg>
+          <article class="count-products" id="carrito">
+            <span id="contador-productos">0</span>
+          </article>
+        </article>
 
-		<main class="container-items">
-			<section class="item">
-				<figure>
-					<img
-						src="https://i.pinimg.com/564x/35/97/78/359778ab1a2e32c8cbc680e9df839d53.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<article class="info-product">
-					<h2>Tazas artesanales</h2>
-					<p class="price">$25.000</p>
-					<button>Añadir al carrito</button>
-				</article>
-			</section>
-			<section class="item">
-				<figure>
-					<img
-						src="https://i.pinimg.com/564x/b5/1b/b9/b51bb9e3fa8eca18ddd1eefc430550b3.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<article class="info-product">
-					<h2>ninfas magicas</h2>
-					<p class="price">$50.000</p>
-					<button>Añadir al carrito</button>
-				</article>
-			</section>
-			<section class="item">
-				<figure>
-					<img
-						src="https://i.pinimg.com/564x/27/3b/b2/273bb22f55689e9288cf76bf6ce7b69a.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<article class="info-product">
-					<h2>Lampara de mariposas</h2>
-					<p class="price">$50.000</p>
-					<button>Añadir al carrito</button>
-				</article>
-			</section>
-			<section class="item">
-				<figure>
-					<img
-						src="https://i.pinimg.com/564x/4d/9c/bf/4d9cbfd081f9e2210392a88e31f0c296.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<article class="info-product">
-					<h2>Jarrones de calavera</h2>
-					<p class="price">$35.000</p>
-					<button>Añadir al carrito</button>
-				</article>
-			</section>
-			<section class="item">
-				<figure>
-					<img
-						src="https://i.pinimg.com/564x/72/da/a7/72daa7aa7ed91617313d5e5cce1c106e.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<article class="info-product">
-					<h2>Gimnasio para gatitos</h2>
-					<p class="price">$150.000</p>
-					<button>Añadir al carrito</button>
-				</article>
-			</section>
+        <!-- contenedor de imagin con el producto -->
+        <section class="container-cart-products hidden-cart">
+          <section class="row-product">
+            <article class="cart-product">
+              <article class="info-cart-product">
+                <span class="cantidad-producto-carrito">1</span>
+                <p class="titulo-producto-carrito">lampara de mariposas</p>
+                <span class="precio-producto-carrito">$50.000</span>
+              </article>
+              <!-- icono de x -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="icon-close"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </article>
+          </section>
 
-			<section class="item">
-				<figure>
-					<img
-						src="https://i.pinimg.com/564x/dc/81/dd/dc81dd68f58d0382ba2d57378c54f9d9.jpg"
-						alt="producto"
-					/>
-				</figure>
-				<article class="info-product">
-					<h2>corset</h2>
-					<p class="price">$90.000</p>
-					<button>Añadir al carrito</button>
-				</article>
-			</section>
-		</main>
-	
-		
-		
+          <article class="cart-total">
+            <h3>Total:</h3>
+            <span class="total-pagar">$200</span>
+          </article>
+        </section>
+      </section>
+    </header>
 
-        <script src="/Eventos_clase1/store.js"></script>
-	</body>
+    <main class="container-items">
+      <!-- producto 1 -->
+      <section class="item">
+        <figure>
+          <img
+            src="https://i.pinimg.com/564x/35/97/78/359778ab1a2e32c8cbc680e9df839d53.jpg"
+            alt="producto"
+          />
+        </figure>
+        <article class="info-product">
+          <h2>Tazas artesanales</h2>
+          <p class="price">$25.000</p>
+          <button id="click1" class="btn-add-card">Añadir al carrito</button>
+        </article>
+      </section>
+      <!-- producto 2 -->
+      <section class="item">
+        <figure>
+          <img
+            src="https://i.pinimg.com/564x/b5/1b/b9/b51bb9e3fa8eca18ddd1eefc430550b3.jpg"
+            alt="producto"
+          />
+        </figure>
+        <article class="info-product">
+          <h2>ninfas magicas</h2>
+          <p class="price">$50.000</p>
+          <button class="btn-add-card">Añadir al carrito</button>
+        </article>
+      </section>
+      <!-- producto 3 -->
+      <section class="item">
+        <figure>
+          <img
+            src="https://i.pinimg.com/564x/27/3b/b2/273bb22f55689e9288cf76bf6ce7b69a.jpg"
+            alt="producto"
+          />
+        </figure>
+        <article class="info-product">
+          <h2>Lampara de mariposas</h2>
+          <p class="price">$50.000</p>
+          <button class="btn-add-card">Añadir al carrito</button>
+        </article>
+      </section>
+      <!-- producto 4 -->
+      <section class="item">
+        <figure>
+          <img
+            src="https://i.pinimg.com/564x/4d/9c/bf/4d9cbfd081f9e2210392a88e31f0c296.jpg"
+            alt="producto"
+          />
+        </figure>
+        <article class="info-product">
+          <h2>Jarrones de calavera</h2>
+          <p class="price">$35.000</p>
+          <button class="btn-add-card">Añadir al carrito</button>
+        </article>
+      </section>
+      <!-- producto 5 -->
+      <section class="item">
+        <figure>
+          <img
+            src="https://i.pinimg.com/564x/72/da/a7/72daa7aa7ed91617313d5e5cce1c106e.jpg"
+            alt="producto"
+          />
+        </figure>
+        <article class="info-product">
+          <h2>Gimnasio para gatitos</h2>
+          <p class="price">$150.000</p>
+          <button class="btn-add-card">Añadir al carrito</button>
+        </article>
+      </section>
+      <!-- producto 6 -->
+      <section class="item">
+        <figure>
+          <img
+            src="https://i.pinimg.com/564x/38/2a/e8/382ae8889d5b616c28d00aed4ca51826.jpg"
+            alt="producto"
+          />
+        </figure>
+        <article class="info-product">
+          <h2>Lampara de hada</h2>
+          <p class="price">$90.000</p>
+          <button class="btn-add-card">Añadir al carrito</button>
+        </article>
+      </section>
+    </main>
+
+    <script src="/Eventos_clase1/store.js"></script>
+  </body>
 </html>
