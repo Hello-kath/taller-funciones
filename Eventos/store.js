@@ -16,23 +16,77 @@ const productsList = document.querySelector(".container-items");
 //variable de arreglos productos
 let allProducts = [];
 
+const valorTotal = document.querySelector('.total-pagar');
+
+const countProducts = document.querySelector('#contador-productos');
+
+const cartEmpty = document.querySelector('.cart-empty');
+const cartTotal = document.querySelector('.cart-total');
+
 productsList.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-add-card")) {
-    console.log("click");
+  if (e.target.classList.contains("btn-add-cart")) {
     const product = e.target.parentElement;
     const infoProduct = {
       quanty: 1,
       title: product.querySelector("h2").textContent,
       price: product.querySelector("p").textContent,
     };
-    /* combinar arrays */
-    allProducts = [...allProducts, infoProduct];
-    showhtml();
+    //some recorre la cantidad de productos
+    const exits = allProducts.some(
+			product => product.title === infoProduct.title
+		);
+
+		if (exits) {
+			const products = allProducts.map(product => {
+				if (product.title === infoProduct.title) {
+					product.quantity++;
+					return product;
+				} else {
+					return product;
+				}
+			});
+			allProducts = [...products];
+		} else {
+			allProducts = [...allProducts, infoProduct];
+		}
+
+		showhtml();
   }
+});
+
+rowProduct.addEventListener('click', e => {
+	if (e.target.classList.contains('icon-close')) {
+		const product = e.target.parentElement;
+		const title = product.querySelector('p').textContent;
+
+		allProducts = allProducts.filter(
+			product => product.title !== title
+		);
+
+		console.log(allProducts);
+
+		showhtml();
+	}
 });
 // funcion para mostrar html
 
 const showhtml = () => {
+  const showHTML = () => {
+    if (!allProducts.length) {
+      cartEmpty.classList.remove('hidden');
+      rowProduct.classList.add('hidden');
+      cartTotal.classList.add('hidden');
+    } else {
+      cartEmpty.classList.add('hidden');
+      rowProduct.classList.remove('hidden');
+      cartTotal.classList.remove('hidden');
+    }
+
+  //limpiar html
+  rowProduct.innerHTML = '';
+  let total = 0;
+	let totalOfProducts = 0;
+
   allProducts.forEach((product) => {
     const containerProduct = document.createElement("section");
     containerProduct.classList.add("cart-product");
@@ -59,6 +113,12 @@ const showhtml = () => {
             />
         </svg>
     `
-    rowProduct.appendChild(containerProduct)
-  })
-};
+    rowProduct.append(containerProduct);
+
+    total =
+			total + parseInt(product.quantity * product.price.slice(1));
+		totalOfProducts = totalOfProducts + product.quantity;
+  });
+  valorTotal.innerText = `$${total}`;
+	countProducts.innerText = totalOfProducts;
+  }};
