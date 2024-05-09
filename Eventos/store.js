@@ -58,6 +58,7 @@ rowProduct.addEventListener('click', e => {
 	if (e.target.classList.contains('icon-close')) {
 		const product = e.target.parentElement;
 		const title = product.querySelector('p').textContent;
+    console.log('lahskdfljkafhd')
 
 		allProducts = allProducts.filter(
 			product => product.title !== title
@@ -70,8 +71,8 @@ rowProduct.addEventListener('click', e => {
 });
 // funcion para mostrar html
 
+
 const showhtml = () => {
-  const showHTML = () => {
     if (!allProducts.length) {
       cartEmpty.classList.remove('hidden');
       rowProduct.classList.add('hidden');
@@ -90,6 +91,7 @@ const showhtml = () => {
   allProducts.forEach((product) => {
     const containerProduct = document.createElement("section");
     containerProduct.classList.add("cart-product");
+    console.log('Hllaaaaa')
     /* añadir la informacion */
     containerProduct.innerHTML = `
     <article class="info-cart-product">
@@ -121,4 +123,5 @@ const showhtml = () => {
   });
   valorTotal.innerText = `$${total}`;
 	countProducts.innerText = totalOfProducts;
-  }};
+  
+};
